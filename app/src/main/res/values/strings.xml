@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Hilol Test Clone</string>
+    <string name="title_home">Bosh sahifa</string>
+    <string name="title_dashboard">Kitoblar</string>
+    <string name="title_settings">Sozlamalar</string>
+    <string name="k01">Bahtiyor oila</string>
+    <string name="k02">Mo\'minning qalqoni</string>
+    <string name="k03">Mo\'minning umr safari</string>
+    <string name="k04">Qarz</string>
+    <string name="k05">Yolg\'on</string>
+    <string name="k06">Hadis va Hayot</string>
+    <string name="book">Book</string>
+    <string name="soon">Tez kunda:</string>
+    <string name="Recommended">Tavsifa etamiz</string>
+</resources>
