@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import uz.mbr.quiz.R
 import uz.mbr.quiz.datasource.DataSource
 import uz.mbr.quiz.adapter.BookRecAdapter
 import uz.mbr.quiz.adapter.BookSoonAdapter
@@ -16,9 +18,6 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-
-    private lateinit var recyclerView: RecyclerView
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +43,11 @@ class HomeFragment : Fragment() {
         val adapterSoon = BookSoonAdapter(listSoon)
         binding.rvSoon.adapter = adapterSoon
 
+        with(binding) {
+            btnStart.setOnClickListener {
+                findNavController().navigate(R.id.action_navigation_home_to_testFragment)
+            }
+        }
 
         return root
     }

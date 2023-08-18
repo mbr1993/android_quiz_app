@@ -29,5 +29,6 @@
         <item name="colorPrimaryInverse">@color/md_theme_inversePrimary</item>
 
         <item name="android:statusBarColor">@color/md_theme_background</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

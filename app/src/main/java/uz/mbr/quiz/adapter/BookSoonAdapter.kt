@@ -18,7 +18,7 @@ class BookSoonAdapter(private val newsList: MutableList<BookData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_rv, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home, parent, false)
         return MyViewHolder(itemView)
     }
 

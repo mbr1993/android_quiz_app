@@ -31,8 +31,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginVertical="16dp"
+                android:layout_margin="16dp"
                 app:cardElevation="4dp"
                 app:strokeWidth="0dp">
 
@@ -60,6 +59,7 @@
                         android:textColor="@color/md_theme_onPrimaryContainer" />
 
                     <Button
+                        android:id="@+id/btn_start"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
@@ -88,7 +88,7 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="8"
-                tools:listitem="@layout/item_rv" />
+                tools:listitem="@layout/item_home" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -107,7 +107,7 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="8"
-                tools:listitem="@layout/item_rv" />
+                tools:listitem="@layout/item_home" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

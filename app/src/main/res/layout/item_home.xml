@@ -31,7 +31,6 @@
         android:fontFamily="@font/rubik_regular"
         android:gravity="center"
         android:text="@string/k01"
-        android:textColor="@color/md_theme_tertiary"
         android:textStyle="bold" />
 
     <TextView
@@ -40,7 +39,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/rubik_regular"
         android:gravity="center"
-        android:textColor="@color/md_theme_tertiary"
+        android:textColor="@color/md_theme_outline"
         android:textSize="12sp"
         tools:text="Test: 0/59" />
 </LinearLayout>
