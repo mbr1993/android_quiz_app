@@ -9,9 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.card.MaterialCardView
 import uz.mbr.quiz.R
 import uz.mbr.quiz.data.Question
@@ -42,10 +42,33 @@ class TestFragment : Fragment() {
 
         with(binding) {
             btnClose.setOnClickListener { findNavController().navigate(R.id.action_testFragment_to_navigation_home) }
-            btnCheck.setOnClickListener { showDialog("Jami 0 ta savolga to'g'ri javob berdingiz!") }
+            btnCheck.setOnClickListener { bottomSheetDialog() }
         }
 
         return root
+    }
+
+
+
+    private fun bottomSheetDialog() {
+        val dialog = BottomSheetDialog(requireContext())
+
+        // on below line we are inflating a layout file which we have created.
+        val view = layoutInflater.inflate(R.layout.bottom_sheet_dialog, null)
+
+        // on below line we are creating a variable for our button which we are using to dismiss our dialog.
+        val btnNext = view.findViewById<Button>(R.id.btn_next)
+
+        // on below line we are adding on click listener for our dismissing the dialog button.
+        btnNext.setOnClickListener { dialog.dismiss() }
+        // below line is use to set cancelable to avoid closing of dialog box when clicking on the screen.
+        dialog.setCancelable(false)
+
+        // on below line we are setting content view to our view.
+        dialog.setContentView(view)
+
+        // on below line we are calling a show method to display a dialog.
+        dialog.show()
     }
 
     private fun showDialog(title: String) {

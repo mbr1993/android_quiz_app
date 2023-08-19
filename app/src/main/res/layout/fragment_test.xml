@@ -158,16 +158,15 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCheck"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/rubik_regular"
-            android:paddingHorizontal="24dp"
-            android:paddingVertical="12dp"
+            android:padding="12dp"
             android:text="Tekshirish"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:visibility="invisible"
             tools:visibility="visible" />
