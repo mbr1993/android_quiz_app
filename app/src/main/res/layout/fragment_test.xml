@@ -78,6 +78,7 @@
         app:strokeWidth="1dp" />
 
     <TextView
+        android:id="@+id/tvQuestion"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="24dp"
@@ -93,7 +94,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/question1"
+            android:id="@+id/cvAnswer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -104,6 +105,7 @@
             app:strokeWidth="0dp">
 
             <TextView
+                android:id="@+id/tvAnswer1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -113,7 +115,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/question2"
+            android:id="@+id/cvAnswer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -124,6 +126,7 @@
             app:strokeWidth="0dp">
 
             <TextView
+                android:id="@+id/tvAnswer2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -133,7 +136,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/question3"
+            android:id="@+id/cvAnswer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
@@ -144,6 +147,7 @@
             app:strokeWidth="0dp">
 
             <TextView
+                android:id="@+id/tvAnswer3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -167,29 +171,6 @@
             android:textStyle="bold"
             android:visibility="invisible"
             tools:visibility="visible" />
-
-        <!--        <com.google.android.material.card.MaterialCardView-->
-        <!--            android:id="@+id/checkQuestion"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_gravity="center"-->
-        <!--            android:layout_marginHorizontal="16dp"-->
-        <!--            android:layout_marginBottom="24dp"-->
-        <!--            app:cardCornerRadius="24dp"-->
-        <!--            app:cardElevation="1dp"-->
-        <!--            app:cardUseCompatPadding="true"-->
-        <!--            app:strokeColor="@color/md_theme_background"-->
-        <!--            app:strokeWidth="0dp">-->
-
-        <!--            <TextView-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:layout_gravity="center"-->
-        <!--                android:layout_marginVertical="12dp"-->
-        <!--                android:fontFamily="@font/rubik_regular"-->
-        <!--                android:text="Tekshirish"-->
-        <!--                android:textAllCaps="true" />-->
-        <!--        </com.google.android.material.card.MaterialCardView>-->
     </LinearLayout>
 
 </LinearLayout>

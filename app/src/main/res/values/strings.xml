@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Hilol Test Clone</string>
     <string name="title_home">Bosh sahifa</string>
-    <string name="title_dashboard">Kitoblar</string>
+    <string name="title_books">Kitoblar</string>
     <string name="title_settings">Sozlamalar</string>
     <string name="k01">Bahtiyor oila</string>
     <string name="k02">Mo\'minning qalqoni</string>

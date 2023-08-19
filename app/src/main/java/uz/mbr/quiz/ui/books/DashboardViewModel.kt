@@ -1,4 +1,4 @@
-package uz.mbr.quiz.ui.dashboard
+package uz.mbr.quiz.ui.books
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
