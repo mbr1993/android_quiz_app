@@ -7,15 +7,75 @@
     android:orientation="vertical"
     tools:context=".ui.TestFragment">
 
-    <TextView
-        android:id="@+id/btnScore"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginHorizontal="16dp"
-        android:gravity="center"
-        android:text="Imkon: 3"
-        app:drawableEndCompat="@drawable/ic_clear"
-        app:drawableTint="@color/md_theme_primary" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="12dp">
+
+
+        <LinearLayout
+            android:id="@+id/linear_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/rubik_bold"
+                android:text="Imkon: 3" />
+
+            <ImageView
+                android:id="@+id/star1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_star"
+                app:tint="@color/md_theme_primary" />
+
+            <ImageView
+                android:id="@+id/star2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_star"
+                app:tint="@color/md_theme_primary" />
+
+            <ImageView
+                android:id="@+id/star3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_round_star"
+                app:tint="@color/md_theme_primary" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClose"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:icon="@drawable/ic_clear"
+            app:iconSize="24dp"
+            tools:ignore="RelativeOverlap" />
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/score_text"
+        style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/rubik_regular"
+        android:text="0"
+        android:textStyle="bold"
+        app:strokeColor="@color/md_theme_onPrimary"
+        app:strokeWidth="1dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -36,80 +96,100 @@
             android:id="@+id/question1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            app:strokeColor="@color/md_theme_primary"
-            app:cardCornerRadius="32dp"
+            android:layout_marginHorizontal="16dp"
+            app:cardCornerRadius="24dp"
             app:cardElevation="1dp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/md_theme_background"
             app:strokeWidth="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
+                android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
-                android:text="232" />
+                android:text="228" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/question2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:strokeColor="@color/md_theme_primary"
             android:layout_marginHorizontal="16dp"
-            app:cardCornerRadius="32dp"
+            app:cardCornerRadius="24dp"
             app:cardElevation="1dp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/md_theme_background"
             app:strokeWidth="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
+                android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
-                android:text="232" />
+                android:text="228" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/question3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:strokeColor="@color/md_theme_primary"
-            android:layout_margin="16dp"
-            app:cardCornerRadius="32dp"
+            android:layout_marginHorizontal="16dp"
+            app:cardCornerRadius="24dp"
             app:cardElevation="1dp"
+            app:cardUseCompatPadding="true"
+            app:strokeColor="@color/md_theme_background"
             app:strokeWidth="0dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
+                android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
                 android:text="232" />
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/checkQuestion"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCheck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
-            app:cardCornerRadius="32dp"
-            app:cardElevation="1dp"
-            app:strokeWidth="0dp">
+            android:fontFamily="@font/rubik_regular"
+            android:paddingHorizontal="24dp"
+            android:paddingVertical="12dp"
+            android:text="Tekshirish"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            tools:visibility="visible" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="32dp"
-                android:layout_marginVertical="16dp"
-                android:fontFamily="@font/rubik_regular"
-                android:text="Tekshirish"
-                android:textAllCaps="true" />
-        </com.google.android.material.card.MaterialCardView>
+        <!--        <com.google.android.material.card.MaterialCardView-->
+        <!--            android:id="@+id/checkQuestion"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center"-->
+        <!--            android:layout_marginHorizontal="16dp"-->
+        <!--            android:layout_marginBottom="24dp"-->
+        <!--            app:cardCornerRadius="24dp"-->
+        <!--            app:cardElevation="1dp"-->
+        <!--            app:cardUseCompatPadding="true"-->
+        <!--            app:strokeColor="@color/md_theme_background"-->
+        <!--            app:strokeWidth="0dp">-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:layout_marginVertical="12dp"-->
+        <!--                android:fontFamily="@font/rubik_regular"-->
+        <!--                android:text="Tekshirish"-->
+        <!--                android:textAllCaps="true" />-->
+        <!--        </com.google.android.material.card.MaterialCardView>-->
     </LinearLayout>
 
 </LinearLayout>
