@@ -1,12 +1,15 @@
 package uz.mbr.quiz.ui
 
-import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.card.MaterialCardView
@@ -39,19 +42,25 @@ class TestFragment : Fragment() {
 
         with(binding) {
             btnClose.setOnClickListener { findNavController().navigate(R.id.action_testFragment_to_navigation_home) }
-            btnCheck.setOnClickListener { showDialog("you have a wrong answer") }
+            btnCheck.setOnClickListener { showDialog("Jami 0 ta savolga to'g'ri javob berdingiz!") }
         }
 
         return root
     }
 
     private fun showDialog(title: String) {
-        val dialog = Dialog(requireContext())
-        dialog.setCancelable(false)
-        dialog.setContentView(R.layout.custom_dialog)
-        val body = dialog.findViewById(R.id.body) as TextView
-        body.text = title
-        val yesBtn = dialog.findViewById(R.id.yesBtn) as Button
+        val builder = AlertDialog.Builder(requireContext())
+        val dialogView = layoutInflater.inflate(R.layout.custom_dialog, null)
+        builder.apply {
+            setCancelable(false)
+            setView(dialogView)
+        }
+        val content = dialogView.findViewById(R.id.content_tv) as TextView
+        content.text = title
+        val yesBtn = dialogView.findViewById(R.id.btnClose) as Button
+
+        val dialog: AlertDialog = builder.create()
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         yesBtn.setOnClickListener {
             dialog.dismiss()
         }
