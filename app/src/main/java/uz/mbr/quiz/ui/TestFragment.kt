@@ -45,12 +45,6 @@ class TestFragment : Fragment() {
         return root
     }
 
-    private fun dia() {
-        val dialog = Dialog(requireContext())
-        dialog.setContentView(R.layout.custom_dialog)
-        dialog.show()
-    }
-
     private fun showDialog(title: String) {
         val dialog = Dialog(requireContext())
         dialog.setCancelable(false)
