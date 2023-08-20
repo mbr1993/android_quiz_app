@@ -1,24 +1,29 @@
 package uz.mbr.quiz.ui
 
+import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.card.MaterialCardView
+import nl.dionsegijn.konfetti.core.Party
+import nl.dionsegijn.konfetti.core.Position
+import nl.dionsegijn.konfetti.core.emitter.Emitter
 import uz.mbr.quiz.R
 import uz.mbr.quiz.data.Question
 import uz.mbr.quiz.databinding.BottomSheetDialogBinding
 import uz.mbr.quiz.databinding.CustomDialogBinding
 import uz.mbr.quiz.databinding.FragmentTestBinding
 import uz.mbr.quiz.datasource.QuestionDataSource
-
+import java.util.concurrent.TimeUnit
 
 class TestFragment : Fragment() {
     private var _binding: FragmentTestBinding? = null
@@ -44,11 +49,50 @@ class TestFragment : Fragment() {
         clickOptions()
 
         with(binding) {
-            btnClose.setOnClickListener { findNavController().navigate(R.id.action_testFragment_to_navigation_home) }
+            btnClose.setOnClickListener { showBackPressedDialog() }
             btnCheck.setOnClickListener { checkAnswer() }
         }
 
+
+        //onBackPressed
+        requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                showBackPressedDialog()
+            }
+        })
+
         return root
+    }
+
+    private fun showBackPressedDialog() {
+        // Create the object of AlertDialog Builder class
+        val builder = AlertDialog.Builder(requireContext())
+        // Set the message show for the Alert time
+
+        // Set Alert Title
+        builder.setTitle("Testni tark etishga ishonchingiz komilmi?")
+
+        // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
+        builder.setCancelable(false)
+
+        // Set the positive button with yes name Lambda OnClickListener method is use of DialogInterface interface.
+        builder.setPositiveButton("Ha",
+            DialogInterface.OnClickListener { dialog: DialogInterface?, which: Int ->
+                // When the user click yes button then app will close
+                findNavController().navigate(R.id.action_testFragment_to_navigation_home)
+            })
+
+        // Set the Negative button with No name Lambda OnClickListener method is use of DialogInterface interface.
+        builder.setNegativeButton("Yo'q",
+            DialogInterface.OnClickListener { dialog: DialogInterface, which: Int ->
+                // If user click no then dialog box is canceled.
+                dialog.cancel()
+            })
+
+        // Create the Alert dialog
+        val alertDialog = builder.create()
+        // Show the Alert Dialog box
+        alertDialog.show()
     }
 
     private fun checkAnswer() {
@@ -114,6 +158,7 @@ class TestFragment : Fragment() {
         }
 
         dialog.show()
+        playConfettiAnimation()
     }
 
     private fun showIncorrectAnswerDialog(title: String) {
@@ -214,6 +259,19 @@ class TestFragment : Fragment() {
         binding.cvAnswer3.strokeWidth = 2
 
         binding.btnCheck.visibility = View.INVISIBLE
+    }
+
+    private fun playConfettiAnimation() {
+        val party = Party(
+            speed = 0f,
+            maxSpeed = 30f,
+            damping = 0.9f,
+            spread = 360,
+            colors = listOf(0xfce18a, 0xff726d, 0xf4306d, 0xb48def),
+            emitter = Emitter(duration = 100, TimeUnit.MILLISECONDS).max(100),
+            position = Position.Relative(0.5, 0.3)
+        )
+        binding.konfettiView.start(party)
     }
 
     override fun onDestroyView() {

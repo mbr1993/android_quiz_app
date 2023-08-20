@@ -62,6 +62,55 @@ class QuestionDataSource {
             Question(
                 "Qur'oni Karimdagi eng qisqa sura qaysi?", "Asr",
                 "Kavsar", "Nasr", "Kavsar"
+            ),
+            Question(
+                "Ikkinchi hijriy sanada, o'n yettinchi Ramazon, juma kuni qaysi jang bo'lgan?",
+                "Uhud jangi", "Badr jangi", "Tabuk g'azoti", "Badr jangi"
+            ),
+            Question(
+                "Ahli Sunna va Jamoatning aqidaviy ta'limoti qaysi?",
+                "Mo'taziliy", "Xorijiy", "Ashariya va Moturudiya",
+                "Ashariya va Moturudiya"
+            ),
+            Question(
+                "Shafoat lug'atda qanday ma'noni anglatadi?",
+                "yon bosish", "ojiz qoldirish", "bo'ysunish", "yon bosish"
+            ),
+            Question(
+                "\"Ummul Qur'on\" nomini olgan surani toping",
+                "Ixlos surasi", "Yaasiyn surasi", "Fotiha surasi",
+                "Fotiha surasi"
+            ),
+            Question(
+                "Nabiiy alayhissalom: \"Halol va haromni eng yaxshi biladiganlardan\" deb kimni ta'riflaganlar?",
+                "Mu'oz ibn Jabalni", "Abu Muso Ash'ariyni", "Usmon ibn Affonni",
+                "Mu'oz ibn Jabalni"
+            ),
+            Question(
+                "\"Oli Imron\" surasida asosan qaysi toifa haqida so'z yuritiladi?",
+                "Ahli kitoblarning nasoro toifasi haqida",
+                "Ahli kitoblarning yahudiy toifasi haqida",
+                "Har ikkisi haqida", "Ahli kitoblarning nasoro toifasi haqida"
+            ),
+            Question(
+                "Shariat jazm etmasdan talab qilingan amal nima?",
+                "Vojib", "Sunnat",
+                "Farz", "Sunnat"
+            ),
+            Question(
+                "Uhud jangida musulmonlar askarining orqa tomonini qo'riqlashga kim boshliq etib tayinlandi?",
+                "Abdulloh ibn Jubayr roziyallohu anhu", "Munzir ibn Amr roziyallohu anhu",
+                "Usmon roziyallohu anhu", "Abdulloh ibn Jubayr roziyallohu anhu"
+            ),
+            Question(
+                "Zaynab binti Jaxsh roziyallohu anho onamizning onalarining ismlari nima bo'lgan?",
+                "Sofiya binti Abdulmutolib", "Hafsa bintu Abdulloh",
+                "Umayma bintu Abdulmutolib", "Umayma bintu Abdulmutolib"
+            ),
+            Question(
+                "Qaysi payg'ambarning qavmi Sadum diyorida halok qilingan?",
+                "Lut alayhissalomning", "Is'hoq alayhissalomning",
+                "Ismoil alayhissalomning", "Lut alayhissalomning"
             )
         )
     }

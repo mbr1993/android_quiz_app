@@ -20,6 +20,6 @@
     <string name="chance">Imkon: %1$d</string>
     <string name="your_answer_is_correct">Javobingiz to\'g\'ri!</string>
     <string name="showing_incorrect_answer">To\'g\'ri javob: \n\"%1$s\"</string>
-    <string name="showing_correct_answer">Tanglangan variant: \"%1$s\"</string>
+    <string name="showing_correct_answer">Tanlangan variant: \"%1$s\"</string>
     <string name="final_dialog">Siz %1$d ta savolga to\'g\'ri javob berdingiz</string>
 </resources>

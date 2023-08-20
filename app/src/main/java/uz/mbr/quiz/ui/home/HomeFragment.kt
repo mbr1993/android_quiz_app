@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
 import uz.mbr.quiz.R
-import uz.mbr.quiz.datasource.DataSource
 import uz.mbr.quiz.adapter.BookRecAdapter
 import uz.mbr.quiz.adapter.BookSoonAdapter
 import uz.mbr.quiz.databinding.FragmentHomeBinding
+import uz.mbr.quiz.datasource.DataSource
 
 class HomeFragment : Fragment() {
 
@@ -44,16 +43,11 @@ class HomeFragment : Fragment() {
         binding.rvSoon.adapter = adapterSoon
 
         with(binding) {
-            btnStart.setOnClickListener {
-                findNavController().navigate(R.id.action_navigation_home_to_testFragment)
-            }
+            btnStart.setOnClickListener { findNavController().navigate(R.id.action_navigation_home_to_testFragment) }
+            tvRecommended.setOnClickListener { findNavController().navigate(R.id.action_navigation_home_to_recommendedBooksFragment) }
         }
 
         return root
-    }
-
-    private fun getData() {
-
     }
 
     override fun onDestroyView() {

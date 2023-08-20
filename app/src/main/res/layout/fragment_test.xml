@@ -78,16 +78,28 @@
         app:strokeColor="@color/md_theme_onPrimary"
         app:strokeWidth="1dp" />
 
-    <TextView
-        android:id="@+id/tvQuestion"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginHorizontal="24dp"
-        android:layout_weight="1"
-        android:fontFamily="@font/rubik_regular"
-        android:gravity="center"
-        android:text="Oisha Onamiz roziyallohu anhoning mahrlari qancha dirham bo'lgan edi?"
-        android:textSize="16sp" />
+        android:layout_weight="1">
+
+        <nl.dionsegijn.konfetti.xml.KonfettiView
+            android:id="@+id/konfettiView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"  />
+
+        <TextView
+            android:id="@+id/tvQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="24dp"
+            android:fontFamily="@font/rubik_regular"
+            android:gravity="center"
+            android:text="Oisha Onamiz roziyallohu anhoning mahrlari qancha dirham bo'lgan edi?"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
