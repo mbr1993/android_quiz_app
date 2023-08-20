@@ -22,4 +22,9 @@
     <string name="showing_incorrect_answer">To\'g\'ri javob: \n\"%1$s\"</string>
     <string name="showing_correct_answer">Tanlangan variant: \"%1$s\"</string>
     <string name="final_dialog">Siz %1$d ta savolga to\'g\'ri javob berdingiz</string>
+    <string name="share">Ulashish</string>
+    <string name="contribution">Dasturga hissa qo\'shish</string>
+    <string name="apps">Bizning dasturlar</string>
+    <string name="choose_language">Tilni tanlang</string>
+    <string name="dark_mode">Tungi fon</string>
 </resources>

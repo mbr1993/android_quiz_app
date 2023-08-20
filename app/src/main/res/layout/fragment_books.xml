@@ -20,7 +20,7 @@
             android:fontFamily="@font/rubik_extra_bold"
             android:gravity="center_vertical"
             android:text="@string/title_books"
-            android:textColor="@color/md_theme_onBackground"
+            android:textColor="@color/md_theme_onPrimaryContainer"
             android:textSize="28sp"
             android:textStyle="bold" />
 

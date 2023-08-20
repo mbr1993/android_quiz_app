@@ -4,24 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginHorizontal="16dp"
     android:orientation="vertical"
     tools:context=".ui.settings.SettingsFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginHorizontal="16dp"
         android:fontFamily="@font/rubik_extra_bold"
         android:gravity="center_vertical"
         android:text="@string/title_settings"
+        android:textColor="@color/md_theme_onPrimaryContainer"
         android:textSize="28sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/text_notifications"
+        android:id="@+id/share"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:textSize="20sp" />
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="12dp"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/rubik_bold"
+        android:text="@string/share"
+        android:textColor="@color/md_theme_onPrimaryContainer"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/ic_share"
+        app:drawableTint="@color/md_theme_primary" />
+
+    <TextView
+        android:id="@+id/contribution"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="12dp"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/rubik_bold"
+        android:text="@string/contribution"
+        android:textColor="@color/md_theme_onPrimaryContainer"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/ic_handshake"
+        app:drawableTint="@color/md_theme_primary" />
+
+    <TextView
+        android:id="@+id/apps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="12dp"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/rubik_bold"
+        android:text="@string/apps"
+        android:textColor="@color/md_theme_onPrimaryContainer"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/ic_apps"
+        app:drawableTint="@color/md_theme_primary" />
+
+    <TextView
+        android:id="@+id/chooseLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="12dp"
+        android:drawablePadding="16dp"
+        android:fontFamily="@font/rubik_bold"
+        android:text="@string/choose_language"
+        android:textColor="@color/md_theme_onPrimaryContainer"
+        android:textSize="18sp"
+        app:drawableStartCompat="@drawable/ic_language"
+        app:drawableTint="@color/md_theme_primary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="16dp"
+            android:fontFamily="@font/rubik_bold"
+            android:text="@string/dark_mode"
+            android:textColor="@color/md_theme_onPrimaryContainer"
+            android:textSize="18sp"
+            app:drawableStartCompat="@drawable/round_dark_mode_24"
+            app:drawableTint="@color/md_theme_primary" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch_dark_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:thumbTint="@color/switch_thumb_selector"
+            app:trackTint="@color/switch_track_selector" />
+
+    </LinearLayout>
 </LinearLayout>

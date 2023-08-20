@@ -30,7 +30,8 @@
                 android:layout_marginTop="1dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/rubik_bold"
-                android:text="Imkon: 3" />
+                android:text="Imkon: 3"
+                android:textColor="@color/md_theme_onPrimaryContainer" />
 
             <ImageView
                 android:id="@+id/star1"
@@ -86,7 +87,7 @@
         <nl.dionsegijn.konfetti.xml.KonfettiView
             android:id="@+id/konfettiView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"  />
+            android:layout_height="match_parent" />
 
         <TextView
             android:id="@+id/tvQuestion"
@@ -97,6 +98,7 @@
             android:fontFamily="@font/rubik_regular"
             android:gravity="center"
             android:text="Oisha Onamiz roziyallohu anhoning mahrlari qancha dirham bo'lgan edi?"
+            android:textColor="@color/md_theme_onPrimaryContainer"
             android:textSize="16sp" />
     </RelativeLayout>
 
@@ -124,7 +126,8 @@
                 android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
                 android:gravity="center"
-                android:text="228" />
+                android:text="228"
+                android:textColor="@color/md_theme_onPrimaryContainer" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -145,7 +148,8 @@
                 android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
                 android:gravity="center"
-                android:text="228" />
+                android:text="228"
+                android:textColor="@color/md_theme_onPrimaryContainer" />
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
@@ -163,6 +167,7 @@
                 android:id="@+id/tvAnswer3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/md_theme_onPrimaryContainer"
                 android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
                 android:gravity="center"

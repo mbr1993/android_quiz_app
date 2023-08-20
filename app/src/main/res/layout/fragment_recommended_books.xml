@@ -10,7 +10,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
         <com.google.android.material.button.MaterialButton
@@ -21,6 +20,7 @@
             android:layout_marginStart="8dp"
             app:icon="@drawable/ic_back"
             app:iconSize="24dp"
+            app:iconTint="@color/md_theme_onPrimaryContainer"
             tools:ignore="RelativeOverlap" />
 
         <TextView
@@ -30,6 +30,7 @@
             android:fontFamily="@font/rubik_extra_bold"
             android:gravity="center_vertical"
             android:text="@string/recommended"
+            android:textColor="@color/md_theme_onPrimaryContainer"
             android:textSize="20sp" />
     </RelativeLayout>
 
@@ -37,7 +38,7 @@
         android:id="@+id/rv_recommendedFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="16dp"
+        android:layout_margin="16dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="3"
         tools:listitem="@layout/item_recommended" />
