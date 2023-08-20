@@ -32,6 +32,36 @@ class QuestionDataSource {
                 "Abu Hanifa",
                 "Qozi Bayzoviy",
                 "Qozi Bayzoviy"
+            ),
+            Question(
+                "\"Al-Munqiz minaz zolal nomli\" kitobning muallifi kim?",
+                "Shayx Kamoliddin Dumariy",
+                "Xorun ar-Rashid",
+                "Imom G'azzoliy",
+                "Imom G'azzoliy"
+            ),
+            Question(
+                "Tog'ning asalidan ushr beriladimi?",
+                "beriladi",
+                "berilmaydi",
+                "yegulik bo'lganligi uchun ixtiyoriy", "beriladi"
+            ),
+            Question(
+                "\"Zikr\" so'zi Qur'oni Karimning ismlaridan biri hisoblanadimi?",
+                "Yo'q", "Ha", "Endi bilib olaman", "Ha"
+            ),
+            Question(
+                "Har safar vahiy nozil bo'lgandan so'ng, Muhammad sollallohu alayhi vassallam kimlarni chaqirar edilar?",
+                "Kotiblarni", "Ahli baytlarini", "Yodlab oluvchilarni",
+                "Kotiblarni"
+            ),
+            Question(
+                "Haj amallari qatoridagi Sa'y orasida yurish qayerda tugaydi?",
+                "Safoda", "Muzdalifada", "Marvada", "Marvada"
+            ),
+            Question(
+                "Qur'oni Karimdagi eng qisqa sura qaysi?", "Asr",
+                "Kavsar", "Nasr", "Kavsar"
             )
         )
     }

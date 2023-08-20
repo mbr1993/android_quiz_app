@@ -24,6 +24,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="1dp"
@@ -106,11 +107,11 @@
 
             <TextView
                 android:id="@+id/tvAnswer1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
+                android:gravity="center"
                 android:text="228" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -127,11 +128,11 @@
 
             <TextView
                 android:id="@+id/tvAnswer2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
+                android:gravity="center"
                 android:text="228" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -148,11 +149,11 @@
 
             <TextView
                 android:id="@+id/tvAnswer3"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_margin="12dp"
                 android:fontFamily="@font/rubik_regular"
+                android:gravity="center"
                 android:text="232" />
         </com.google.android.material.card.MaterialCardView>
 
