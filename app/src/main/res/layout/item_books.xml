@@ -37,6 +37,7 @@
             android:layout_marginStart="8dp"
             android:fontFamily="@font/rubik_bold"
             android:text="@string/k01"
+            android:textColor="@color/md_theme_onPrimaryContainer"
             android:textSize="18sp"
             android:textStyle="bold" />
 

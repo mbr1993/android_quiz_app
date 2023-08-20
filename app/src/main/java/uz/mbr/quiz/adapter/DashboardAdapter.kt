@@ -21,7 +21,7 @@ class DashboardAdapter(private val list: MutableList<BookData>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_dashboard, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_books, parent, false)
         return MyViewHolder(itemView)
     }
 

@@ -46,6 +46,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
             android:drawableStart="@drawable/ic_search"
             android:drawablePadding="8dp"
             android:drawableTint="@color/md_theme_primary"
@@ -61,5 +62,5 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_dashboard" />
+        tools:listitem="@layout/item_books" />
 </LinearLayout>

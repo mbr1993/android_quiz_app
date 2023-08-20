@@ -1,5 +1,7 @@
 package uz.mbr.quiz.ui.settings
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,13 +27,43 @@ class SettingsFragment : Fragment() {
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        with(binding) {
+            contribution.setOnClickListener {
+                val telegram =
+                    Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/hilol_loyiha"))
+                startActivity(telegram)
+            }
 
-        // set the switch to listen on checked change
-        binding.switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
-            if (binding.switchDarkMode.isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+                if (binding.switchDarkMode.isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                }
+            }
+
+            apps.setOnClickListener {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW, Uri.parse(
+                            "https://play.google.com/store/apps/developer?id=Hilol+Nashr+nashriyoti&hl=en&gl=US"
+                        )
+                    )
+                )
+            }
+
+
+            share.setOnClickListener {
+                try {
+                    val shareIntent = Intent(Intent.ACTION_SEND)
+                    shareIntent.type = "text/plain"
+                    val shareMessage =
+                        "https://play.google.com/store/apps/details?id=uz.hilolnashr.hilolquiz&hl=ru&gl=US"
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
+                    startActivity(Intent.createChooser(shareIntent, "choose one"))
+                } catch (e: Exception) {
+                    //e.toString();
+                }
             }
         }
 
