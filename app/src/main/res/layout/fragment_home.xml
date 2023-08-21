@@ -41,8 +41,9 @@
                     android:layout_margin="8dp"
                     android:orientation="vertical">
 
+
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:fontFamily="@font/rubik_bold"
@@ -54,41 +55,52 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
-                        android:layout_marginBottom="12dp"
                         android:fontFamily="@font/rubik_regular"
                         android:text="O'zingizni sinab ko'ring! Hamma kitoblardan umumiy test."
                         android:textColor="@color/md_theme_onPrimaryContainer" />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_coming_soon"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:src="@drawable/ic_round_star_outline"
+                                app:tint="@color/md_theme_primary"
+                                android:contentDescription="@string/star" />
+
+                            <TextView
+                                android:id="@+id/tv_bestScore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="4dp"
+                                android:text="@string/bestScore"
+                                android:textColor="@color/md_theme_primary"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
 
                         <com.google.android.material.button.MaterialButton
-                            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingHorizontal="24dp"
-                            android:text="@string/_0"
-                            android:textAlignment="viewStart"
-                            android:textColor="@color/md_theme_primary"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1" />
-
-                        <Button
                             android:id="@+id/btn_start"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="48dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_gravity="end"
+                            android:layout_marginEnd="4dp"
                             android:fontFamily="@font/rubik_regular"
                             android:text="Boshlash"
                             android:textColor="@color/md_theme_onTertiary" />
-                    </LinearLayout>
+                    </RelativeLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

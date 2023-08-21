@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import uz.mbr.quiz.R
+import uz.mbr.quiz.SharedPref
 import uz.mbr.quiz.databinding.BottomSheetDialogLanguageBinding
 import uz.mbr.quiz.databinding.FragmentSettingsBinding
 
@@ -20,15 +21,18 @@ class SettingsFragment : Fragment() {
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var mySharedPref: SharedPref
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val notificationsViewModel = ViewModelProvider(this)[SettingsViewModel::class.java]
-
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        loadMyShared()
 
         with(binding) {
 
@@ -40,11 +44,13 @@ class SettingsFragment : Fragment() {
             }
 
             // darkMode
-            switchDarkMode.setOnCheckedChangeListener { _, iwsChecked ->
-                if (binding.switchDarkMode.isChecked) {
+            switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    mySharedPref.setNightModeState(true)
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    mySharedPref.setNightModeState(false)
                 }
             }
 
@@ -78,6 +84,13 @@ class SettingsFragment : Fragment() {
         }
 
         return root
+    }
+
+    private fun loadMyShared() {
+        mySharedPref = SharedPref(requireContext())
+
+        //NightMode
+        binding.switchDarkMode.isChecked = mySharedPref.loadNightModeState()
     }
 
     private fun chooseLanguageDialog() {

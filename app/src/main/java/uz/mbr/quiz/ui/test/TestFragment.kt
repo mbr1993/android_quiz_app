@@ -69,8 +69,8 @@ class TestFragment : Fragment() {
         // Set the message show for the Alert time
 
         // Set Alert Title
-        builder.setTitle("Testni tark etishga ishonchingiz komilmi?")
-
+        builder.setTitle("Testni tark etish!")
+            .setMessage("Testni tark etishga ishonchingiz komilmi? To'plangan natija hisobga olinmaydi!")
         // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
         builder.setCancelable(false)
 
@@ -78,6 +78,7 @@ class TestFragment : Fragment() {
         builder.setPositiveButton("Ha",
             DialogInterface.OnClickListener { dialog: DialogInterface?, which: Int ->
                 // When the user click yes button then app will close
+
                 findNavController().navigate(R.id.action_testFragment_to_navigation_home)
             })
 
@@ -195,12 +196,20 @@ class TestFragment : Fragment() {
 
         val dialog: AlertDialog = builder.create()
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
         dialogBinding.btnClose.setOnClickListener {
-            findNavController().popBackStack()
+            passingScoreData()
             checkAnswerDialog.dismiss()
             dialog.dismiss()
         }
+
         dialog.show()
+    }
+
+    private fun passingScoreData() {
+        val directions =
+            TestFragmentDirections.actionTestFragmentToNavigationHome(foundCorrectAnswers)
+        findNavController().navigate(directions)
     }
 
     private fun setQuestion() {

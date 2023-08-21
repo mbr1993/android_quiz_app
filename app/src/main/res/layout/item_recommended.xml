@@ -31,6 +31,7 @@
         android:fontFamily="@font/rubik_regular"
         android:gravity="center"
         android:text="@string/k01"
+        android:textColor="@color/md_theme_onPrimaryContainer"
         android:textStyle="bold" />
 
     <TextView
