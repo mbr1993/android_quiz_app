@@ -53,7 +53,6 @@ class TestFragment : Fragment() {
             btnCheck.setOnClickListener { checkAnswer() }
         }
 
-
         //onBackPressed
         requireActivity().onBackPressedDispatcher.addCallback(object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {

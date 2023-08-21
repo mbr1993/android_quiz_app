@@ -54,18 +54,41 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
+                        android:layout_marginBottom="12dp"
                         android:fontFamily="@font/rubik_regular"
                         android:text="O'zingizni sinab ko'ring! Hamma kitoblardan umumiy test."
                         android:textColor="@color/md_theme_onPrimaryContainer" />
 
-                    <Button
-                        android:id="@+id/btn_start"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:fontFamily="@font/rubik_regular"
-                        android:text="Boshlash"
-                        android:textColor="@color/md_theme_onTertiary" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="24dp"
+                            android:text="@string/_0"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/md_theme_primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <Button
+                            android:id="@+id/btn_start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/rubik_regular"
+                            android:text="Boshlash"
+                            android:textColor="@color/md_theme_onTertiary" />
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

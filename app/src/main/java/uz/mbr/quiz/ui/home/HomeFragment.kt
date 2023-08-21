@@ -5,13 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import uz.mbr.quiz.R
 import uz.mbr.quiz.databinding.FragmentHomeBinding
 import uz.mbr.quiz.datasource.DataSource
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), BookRecAdapter.OnItemClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -21,19 +20,12 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this)[HomeViewModel::class.java]
-
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.textHome
-//        homeViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
 
         val listRecommended = DataSource().getRecommendedBookData()
-        val adapterForRecommended = BookRecAdapter(listRecommended)
+        val adapterForRecommended = BookRecAdapter(listRecommended, this)
         binding.rvRecommended.adapter = adapterForRecommended
 
         val listSoon = DataSource().getBookSoonData()
@@ -51,5 +43,9 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClick(position: Int) {
+        findNavController().navigate(R.id.action_navigation_home_to_testFragment)
     }
 }
