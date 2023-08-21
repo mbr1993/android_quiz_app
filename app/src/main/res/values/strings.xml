@@ -27,4 +27,8 @@
     <string name="apps">Bizning dasturlar</string>
     <string name="choose_language">Tilni tanlang</string>
     <string name="dark_mode">Tungi fon</string>
+    <string name="uzbek_latin">O\'zbek (Lotin)</string>
+    <string name="uzbek_kiril">Ўзбек (Лотин)</string>
+    <string name="search_view_no_result_text">Hech qanday natija topilmadi, Boshqa so\'zni kiriting</string>
+    <string name="coming_soon">Tez kunda</string>
 </resources>

@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import uz.mbr.quiz.R
-import uz.mbr.quiz.adapter.BookRecAdapter
-import uz.mbr.quiz.adapter.BookSoonAdapter
 import uz.mbr.quiz.databinding.FragmentHomeBinding
 import uz.mbr.quiz.datasource.DataSource
 

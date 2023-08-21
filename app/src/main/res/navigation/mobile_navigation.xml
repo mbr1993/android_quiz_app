@@ -22,7 +22,13 @@
         android:id="@+id/navigation_books"
         android:name="uz.mbr.quiz.ui.books.BooksFragment"
         android:label="@string/title_books"
-        tools:layout="@layout/fragment_books" />
+        tools:layout="@layout/fragment_books" >
+        <action
+            android:id="@+id/action_navigation_books_to_testFragment"
+            app:destination="@id/testFragment"
+            app:popUpTo="@id/testFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_settings"
@@ -31,7 +37,7 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/testFragment"
-        android:name="uz.mbr.quiz.ui.TestFragment"
+        android:name="uz.mbr.quiz.ui.test.TestFragment"
         android:label="fragment_test"
         tools:layout="@layout/fragment_test">
         <action
@@ -42,13 +48,18 @@
     </fragment>
     <fragment
         android:id="@+id/recommendedBooksFragment"
-        android:name="uz.mbr.quiz.ui.RecommendedBooksFragment"
+        android:name="uz.mbr.quiz.ui.recommended.RecommendedBooksFragment"
         android:label="fragment_recommended_books"
         tools:layout="@layout/fragment_recommended_books">
         <action
             android:id="@+id/action_recommendedBooksFragment_to_navigation_home"
             app:destination="@id/navigation_home"
             app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_recommendedBooksFragment_to_testFragment"
+            app:destination="@id/testFragment"
+            app:popUpTo="@id/testFragment"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>

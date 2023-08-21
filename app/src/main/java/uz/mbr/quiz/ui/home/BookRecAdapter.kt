@@ -1,4 +1,4 @@
-package uz.mbr.quiz.adapter
+package uz.mbr.quiz.ui.home
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import uz.mbr.quiz.R
 import uz.mbr.quiz.data.BookData
 
-class RecommendedFragmentAdapter(private val newsList: MutableList<BookData>) :
-    RecyclerView.Adapter<RecommendedFragmentAdapter.MyViewHolder>() {
+class BookRecAdapter(private val newsList: MutableList<BookData>) :
+    RecyclerView.Adapter<BookRecAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val image: ImageView = itemView.findViewById(R.id.coverOfBook)
@@ -20,8 +20,7 @@ class RecommendedFragmentAdapter(private val newsList: MutableList<BookData>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_recommended, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_home, parent, false)
         return MyViewHolder(itemView)
     }
 

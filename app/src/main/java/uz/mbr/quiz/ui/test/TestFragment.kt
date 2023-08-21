@@ -1,4 +1,4 @@
-package uz.mbr.quiz.ui
+package uz.mbr.quiz.ui.test
 
 import android.content.DialogInterface
 import android.graphics.Color
@@ -240,25 +240,29 @@ class TestFragment : Fragment() {
     }
 
     private fun defaultOptionsView() {
-        binding.cvAnswer1.setCardBackgroundColor(
-            ContextCompat.getColor(requireContext(), R.color.md_theme_background)
-        )
-        binding.cvAnswer1.cardElevation = 2F
-        binding.cvAnswer1.strokeWidth = 2
+        with(binding) {
+            cvAnswer1.setCardBackgroundColor(
+                ContextCompat.getColor(requireContext(), R.color.md_theme_background)
+            )
+            cvAnswer1.cardElevation = 2F
+            cvAnswer1.strokeWidth = 2
 
-        binding.cvAnswer2.setCardBackgroundColor(
-            ContextCompat.getColor(requireContext(), R.color.md_theme_background)
-        )
-        binding.cvAnswer2.cardElevation = 2F
-        binding.cvAnswer2.strokeWidth = 2
+            cvAnswer2.setCardBackgroundColor(
+                ContextCompat.getColor(requireContext(), R.color.md_theme_background)
+            )
+            cvAnswer2.cardElevation = 2F
+            cvAnswer2.strokeWidth = 2
 
-        binding.cvAnswer3.setCardBackgroundColor(
-            ContextCompat.getColor(requireContext(), R.color.md_theme_background)
-        )
-        binding.cvAnswer3.cardElevation = 2F
-        binding.cvAnswer3.strokeWidth = 2
+            cvAnswer3.setCardBackgroundColor(
+                ContextCompat.getColor(requireContext(), R.color.md_theme_background)
+            )
+            cvAnswer3.cardElevation = 2F
+            cvAnswer3.strokeWidth = 2
 
-        binding.btnCheck.visibility = View.INVISIBLE
+            btnCheck.visibility = View.INVISIBLE
+        }
+
+
     }
 
     private fun playConfettiAnimation() {

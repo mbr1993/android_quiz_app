@@ -1,7 +1,8 @@
-package uz.mbr.quiz.adapter
+package uz.mbr.quiz.ui.books
 
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -9,14 +10,28 @@ import androidx.recyclerview.widget.RecyclerView
 import uz.mbr.quiz.R
 import uz.mbr.quiz.data.BookData
 
-class DashboardAdapter(private val list: MutableList<BookData>) :
-    RecyclerView.Adapter<DashboardAdapter.MyViewHolder>() {
+class BooksAdapter(
+    private var list: List<BookData>,
+    private var listener: OnItemClickListener
+) :
+    RecyclerView.Adapter<BooksAdapter.MyViewHolder>() {
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), OnClickListener {
         val imageView: ImageView = itemView.findViewById(R.id.coverOfBook)
         val nameBook: TextView = itemView.findViewById(R.id.book_name_text)
         val nameAuthor: TextView = itemView.findViewById(R.id.book_author_text)
         val numberOfQuestionText: TextView = itemView.findViewById(R.id.numberOfQuestionText)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(p0: View?) {
+            val position = adapterPosition
+            if (position !=RecyclerView.NO_POSITION){
+                listener.onItemClick(position)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -35,5 +50,14 @@ class DashboardAdapter(private val list: MutableList<BookData>) :
         holder.nameBook.text = currentItem.name
         holder.nameAuthor.text = currentItem.author
         holder.numberOfQuestionText.text = "Test: 0/${currentItem.numberOfQuestions}"
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    fun setFilteredList(mList: List<BookData>) {
+        this.list = mList
+        notifyDataSetChanged()
     }
 }
