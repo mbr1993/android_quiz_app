@@ -31,7 +31,7 @@ class TestFragment : Fragment() {
 
     private lateinit var checkAnswerDialog: BottomSheetDialog
 
-    private var questionList: MutableList<Question> = QuestionDataSource().getQuestionData()
+    private lateinit var questionList: ArrayList<Question>
     private var questionPosition = 0
 
     private var selectedAnswer = ""
@@ -70,7 +70,7 @@ class TestFragment : Fragment() {
 
         // Set Alert Title
         builder.setTitle("Testni tark etish!")
-            .setMessage("Testni tark etishga ishonchingiz komilmi? To'plangan natija hisobga olinmaydi!")
+            .setMessage("Ishonchingiz komilmi? To'plangan natija hisobga olinmaydi!")
         // Set Cancelable false for when the user clicks on the outside the Dialog Box then it will remain show
         builder.setCancelable(false)
 
@@ -213,6 +213,9 @@ class TestFragment : Fragment() {
     }
 
     private fun setQuestion() {
+        questionList = QuestionDataSource().getQuestionData() as ArrayList<Question>
+        questionList.shuffle()
+
         defaultOptionsView()
         with(binding) {
             tvQuestion.text = questionList[questionPosition].question
